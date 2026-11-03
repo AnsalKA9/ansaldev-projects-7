@@ -1,38 +1,287 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AIHUB | Image AI Tools</title>
+
     <style>
-    .r1{
-        display: block;
-        align-content: center;
-        text-align: center;
-    }
-    .r2{
-         display: flex;
-         justify-content: space-between;
-         text-align: center;
-         margin: 18px;
-         font-size: 40px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-</style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0b1020;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #111a35, #172b4d, #243b68);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: #63e6d5;
+        }
+
+        header p {
+            color: #bdc9df;
+            margin-top: 10px;
+        }
+
+        nav {
+            background: #10182b;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #293750;
+        }
+
+        nav a {
+            color: #dce6f5;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #63e6d5;
+        }
+
+        section {
+            text-align: center;
+            padding: 45px 15px 15px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        section p {
+            color: #9baac4;
+            margin-top: 10px;
+        }
+
+        .underline {
+            height: 4px;
+            width: 75px;
+            background: #63e6d5;
+            border-radius: 10px;
+            margin: 15px auto;
+        }
+
+        .tools {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 30px auto 60px;
+            padding: 0 25px;
+        }
+
+        .tool-card {
+            background: #151f34;
+            border: 1px solid #293750;
+            border-radius: 18px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: 0.35s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+            border-color: #63e6d5;
+            box-shadow: 0 12px 30px #00000066;
+        }
+
+        .tool-card img {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            background: white;
+            padding: 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .tool-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .tool-card h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+        }
+
+        .tool-card p {
+            color: #9baac4;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .visit {
+            display: inline-block;
+            text-decoration: none;
+            background: #63e6d5;
+            color: #0b1020;
+            padding: 11px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .visit:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #10182b;
+            text-align: center;
+            padding: 25px;
+            color: #9baac4;
+            border-top: 1px solid #293750;
+        }
+
+        footer span {
+            color: #63e6d5;
+            font-weight: bold;
+        }
+
+        @media(max-width: 800px) {
+            .tools {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media(max-width: 520px) {
+            .tools {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+        }
+
+    </style>
 </head>
+
 <body>
-    <section><h2>MOST POPULAR IMAGE AI</h2></section>
-<article class="r1">
-    <div><a href="https://www.midjourney.com" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=midjourney.com&sz=128" alt=""></a><h3><i>Midjourney</i></h3></div>
-    <div><a href="https://firefly.adobe.com" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=128" alt=""></a><h3><i>Adobe Firefly</i></h3></div>
-    <div><a href="https://leonardo.ai" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=leonardo.ai&sz=128" alt=""></a><h3><i>Leonardo AI</i></h3></div>
-</article>
-<section><h2>MORE IMAGE AI TOOLS</h2></section>
-<article class="r2">
-    <div><a href="https://ideogram.ai" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=ideogram.ai&sz=128" alt=""></a><h3><i>Ideogram</i></h3></div>
-    <div><a href="https://stability.ai" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=stability.ai&sz=128" alt=""></a><h3><i>Stability AI</i></h3></div>
-    <div><a href="https://www.canva.com" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=canva.com&sz=128" alt=""></a><h3><i>Canva AI</i></h3></div>
-</article>
-    
+
+    <header>
+        <h1>IMAGE AI TOOLS</h1>
+        <p>Turn your imagination into reality with Artificial Intelligence.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="image.html">IMAGE</a>
+        <a href="coding.html">CODING</a>
+        <a href="study.html">STUDY</a>
+        <a href="research.html">RESEARCH</a>
+        <a href="video.html">VIDEO</a>
+        <a href="automation.html">AUTOMATION</a>
+        <a href="writing.html">WRITING</a>
+        <a href="about.html">ABOUT</a>
+    </nav>
+
+    <section>
+        <h2>MOST POPULAR IMAGE AI</h2>
+        <div class="underline"></div>
+        <p>Discover the most powerful AI image creation platforms.</p>
+    </section>
+
+    <main class="tools">
+
+        <div class="tool-card">
+            <a href="https://www.midjourney.com" target="_blank">
+                <img src="https://www.google.com/s2/favicons?domain=midjourney.com&sz=256" alt="Midjourney">
+            </a>
+            <h3><i>Midjourney</i></h3>
+            <p>Create stunning AI-generated artwork and realistic images.</p>
+            <a class="visit" href="https://www.midjourney.com" target="_blank">Explore AI</a>
+        </div>
+
+        <div class="tool-card">
+            <a href="https://firefly.adobe.com" target="_blank">
+                <img src="https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=256" alt="Adobe Firefly">
+            </a>
+            <h3><i>Adobe Firefly</i></h3>
+            <p>Generate and edit creative images using Adobe's AI technology.</p>
+            <a class="visit" href="https://firefly.adobe.com" target="_blank">Explore AI</a>
+        </div>
+
+        <div class="tool-card">
+            <a href="https://leonardo.ai" target="_blank">
+                <img src="https://www.google.com/s2/favicons?domain=leonardo.ai&sz=256" alt="Leonardo AI">
+            </a>
+            <h3><i>Leonardo AI</i></h3>
+            <p>Design impressive artwork, characters and digital assets.</p>
+            <a class="visit" href="https://leonardo.ai" target="_blank">Explore AI</a>
+        </div>
+
+    </main>
+
+    <section>
+        <h2>MORE IMAGE AI TOOLS</h2>
+        <div class="underline"></div>
+        <p>Explore more tools to bring your creative ideas to life.</p>
+    </section>
+
+    <main class="tools">
+
+        <div class="tool-card">
+            <a href="https://ideogram.ai" target="_blank">
+                <img src="https://www.google.com/s2/favicons?domain=ideogram.ai&sz=256" alt="Ideogram">
+            </a>
+            <h3><i>Ideogram</i></h3>
+            <p>Create beautiful images, posters and designs with AI.</p>
+            <a class="visit" href="https://ideogram.ai" target="_blank">Explore AI</a>
+        </div>
+
+        <div class="tool-card">
+            <a href="https://stability.ai" target="_blank">
+                <img src="https://www.google.com/s2/favicons?domain=stability.ai&sz=256" alt="Stability AI">
+            </a>
+            <h3><i>Stability AI</i></h3>
+            <p>Explore powerful generative AI models for visual creativity.</p>
+            <a class="visit" href="https://stability.ai" target="_blank">Explore AI</a>
+        </div>
+
+        <div class="tool-card">
+            <a href="https://www.canva.com" target="_blank">
+                <img src="https://www.google.com/s2/favicons?domain=canva.com&sz=256" alt="Canva AI">
+            </a>
+            <h3><i>Canva AI</i></h3>
+            <p>Design graphics, presentations and creative content with AI.</p>
+            <a class="visit" href="https://www.canva.com" target="_blank">Explore AI</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Made with creativity by <span>AIHUB</span></p>
+        <p>Explore. Learn. Create. Innovate.</p>
+    </footer>
+
 </body>
 </html>
+```
