@@ -5,85 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIHUB.Home</title>
     <style>
-        header{
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
             background-color: aquamarine;
             display: flex;
             justify-content: center;
             text-align: center;
-           
+            padding: 10px 0;
         }
-        
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        header h2 {
+            margin: 5px 0;
+            font-style: oblique;
+            font-size: 1.5rem;
+        }
 
         nav ul {
             background-color: aqua;
             display: flex;
-            justify-content:space-between;
+            justify-content: space-between;
+            flex-wrap: wrap;
             list-style: none;
             gap: 20px;
-            height: 30px;
+            margin: 0;
+            padding: 10px 20px;
             font-size: large;
-            padding-top: 5px;
-            margin-top: -10px;
-            padding-right:  5px ;
-            
-            
-
-           
-            
         }
+
         nav a {
             text-decoration: none;
-            
-            
-           
-            
+            color: black;
+            font-weight: bold;
         }
-        h2{
+
+        section {
+            padding: 10px 20px;
+        }
+
+        section h2 {
             margin-bottom: 10px;
             font-style: oblique;
         }
-        .r1{
-            display: flex;
-            justify-content: space-between;
-            text-align: center;
-            margin: 18px;
-            font-size: 40px;
 
-           
-        }
-         
-        
-          .r2{
+        /* Responsive grid rows */
+        .r1, .r2, .r3 {
             display: flex;
-            justify-content: space-between;
-            text-align: center;
-            margin: 18px;
-            font-size: 40px;
-        }
-        .r3{
-            display: flex;
-            justify-content: space-between;
-            text-align: center;
-            margin: 18px;
-            font-size: 40px;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px;
         }
 
+        .r1 > div, .r2 > div, .r3 > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1 1 250px; /* Forces cards to shrink/grow and wrap dynamically */
+            max-width: 400px;
+        }
 
+        .r1 img, .r2 img, .r3 img {
+            width: 100%;
+            height: 300px;
+            object-fit: contain; /* Keeps logo aspect ratios clean without squishing them */
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
+        h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
     </style>  
 </head>
 
 <body>
 <header>
     <h1>AN AI TOOL EXIST FOR EVERY PROBLEM 
-        <div>
-            <h2>IN</h2>
-        </div>
-        <div>
-            <h1>AIHUB</h1>
-        </div>
+        <div><h2>IN</h2></div>
+        <div><h1>AIHUB</h1></div>
     </h1>
 </header>
+
 <nav>
     <ul>
         <li><a href="image.html">IMAGE</a></li>
@@ -95,54 +109,53 @@
         <li><a href="writing.html">WRITING</a></li> 
      </ul>
 </nav>
+
 <section>
     <h2>MOST POPULAR AI RIGHT NOW</h2>
 </section>
- <article class="r1">
+
+<article class="r1">
     <div>
-        <a href="https://claude.com/" target="_blank"><img height="400px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNgJvi2fc9oREqObTRcyJcbuSTmv-p-1Mpe0dYZ_9R0A&s=10" alt=""></a>
+        <a href="https://claude.com/" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNgJvi2fc9oREqObTRcyJcbuSTmv-p-1Mpe0dYZ_9R0A&s=10" alt="Claude AI"></a>
         <h3><i>claude</i></h3>
     </div>
-     <div>
-        <a href="https://chatgpt.com" target="_blank"><img height="400px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtz9CtrogmXsW4r4Jid9tPl0d8MKd-LYsGzkhUEElCdA&s=10" alt=""></a>
+    <div>
+        <a href="https://chatgpt.com" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtz9CtrogmXsW4r4Jid9tPl0d8MKd-LYsGzkhUEElCdA&s=10" alt="ChatGPT"></a>
         <h3><i>ChatGPT</i></h3>
     </div>
-     <div>
-        <a href="https://gemini.google.com" target="_blank"><img height="400px" src="https://9to5google.com/wp-content/uploads/sites/4/2025/07/new-Gemini-icon-cover.jpg?quality=82&strip=all&resize=1200,628" alt=""></a>
+    <div>
+        <a href="https://gemini.google.com" target="_blank"><img src="https://9to5google.com/wp-content/uploads/sites/4/2025/07/new-Gemini-icon-cover.jpg?quality=82&strip=all&resize=1200,628" alt="Gemini"></a>
         <h3><i>Gemini</i></h3>
     </div>
-    
-    
 </article>
+
 <article class="r2">
-        <div>
-        <a href="https://www.perplexity.ai" target="_blank"><img height="400px" src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128" alt=""></a>
+    <div>
+        <a href="https://www.perplexity.ai" target="_blank"><img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128" alt="Perplexity"></a>
         <h3><i>Perplexity</i></h3>
     </div>
-     <div>
-        <a href="https://chat.deepseek.com" target="_blank"><img height="400px" src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=128" alt=""></a>
+    <div>
+        <a href="https://chat.deepseek.com" target="_blank"><img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=128" alt="Deepseek"></a>
         <h3><i>Deepseek</i></h3>
     </div>
-     <div>
-        <a href="https://copilot.microsoft.com" target="_blank"><img height="400px" src="https://www.google.com/s2/favicons?domain=copilot.microsoft.com&sz=128" alt=""></a>
+    <div>
+        <a href="https://copilot.microsoft.com" target="_blank"><img src="https://www.google.com/s2/favicons?domain=copilot.microsoft.com&sz=128" alt="Copilot"></a>
         <h3><i>Copilot</i></h3>
     </div>
-    
-    
 </article>
+
 <article class="r3">
-        <div>
-        <a href="https://grok.com" target="_blank"><img height="400px" src="https://www.google.com/s2/favicons?domain=grok.com&sz=128" alt=""></a>
+    <div>
+        <a href="https://grok.com" target="_blank"><img src="https://www.google.com/s2/favicons?domain=grok.com&sz=128" alt="Grok"></a>
         <h3><i>Grok</i></h3>
     </div>
-     <div>
-        <a href="https://www.midjourney.com" target="_blank"><img height="400px" src="https://www.google.com/s2/favicons?domain=midjourney.com&sz=128" alt=""></a>
+    <div>
+        <a href="https://www.midjourney.com" target="_blank"><img src="https://www.google.com/s2/favicons?domain=midjourney.com&sz=128" alt="Midjourney"></a>
         <h3><i>Midjourney</i></h3>
     </div>
     <div>
-        <a href="https://meta.ai" target="_blank"><img height="400px" src="https://www.google.com/s2/favicons?domain=meta.ai&sz=128" alt=""></a>
+        <a href="https://meta.ai" target="_blank"><img src="https://www.google.com/s2/favicons?domain=meta.ai&sz=128" alt="Meta AI"></a>
         <h3><i>Meta AI</i></h3>
-    </div>
     </div>
 </article>
     
