@@ -2,38 +2,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-    .r1{
-        display: block;
-        align-content: center;
-        text-align: center;
-    }
-    .r2{
-         display: flex;
-         justify-content: space-between;
-         text-align: center;
-         margin: 18px;
-         font-size: 40px;
-        }
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIHUB | Writing AI Tools</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#0b1020;color:white}
+header{text-align:center;padding:45px 20px;background:linear-gradient(135deg,#111a35,#172b4d,#243b68)}
+header h1{font-size:clamp(2rem,5vw,3rem)}
+header span,footer span{color:#63e6d5}
+header p{color:#bdc9df;margin-top:12px}
+nav{background:#10182b;position:sticky;top:0;z-index:100;border-bottom:1px solid #293750}
+nav ul{display:flex;justify-content:center;flex-wrap:wrap;list-style:none;gap:8px;padding:14px}
+nav a{display:block;text-decoration:none;color:#dce6f5;padding:10px 15px;border-radius:8px;font-weight:600;transition:.3s}
+nav a:hover,nav a.active{background:#63e6d5;color:#0b1020}
+section{text-align:center;padding:45px 20px 15px}
+section h2{font-size:2rem}
+section p{color:#9baac4;margin-top:12px}
+.underline{width:75px;height:4px;background:#63e6d5;margin:15px auto;border-radius:10px}
+.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;max-width:1150px;margin:30px auto 70px;padding:0 25px}
+.tool-card{background:#151f34;border:1px solid #293750;border-radius:18px;padding:25px 20px;text-align:center;transition:.35s}
+.tool-card:hover{transform:translateY(-8px);border-color:#63e6d5;box-shadow:0 12px 35px #00000066}
+.tool-card img{width:110px;height:110px;object-fit:contain;padding:12px;background:#f4f6fa;border-radius:18px}
+.tool-card h3{font-size:1.4rem;margin:18px 0 10px}
+.tool-card p{color:#9baac4;font-size:.9rem;line-height:1.5;min-height:55px;margin-bottom:18px}
+.visit{display:inline-block;text-decoration:none;background:#63e6d5;color:#0b1020;padding:10px 24px;border-radius:8px;font-weight:bold;transition:.3s}
+.visit:hover{background:white;transform:scale(1.05)}
+footer{text-align:center;padding:30px 15px;background:#10182b;border-top:1px solid #293750;color:#9baac4}
+footer p{margin:5px}
+@media(max-width:800px){.tools{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.tools{grid-template-columns:1fr;padding:0 18px}nav a{padding:9px 11px;font-size:.85rem}}
 </style>
 </head>
 <body>
-    <section><h2>MOST POPULAR WRITING AI</h2></section>
-<article class="r1">
-    <div><a href="https://www.grammarly.com" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=grammarly.com&sz=128" alt=""></a><h3><i>Grammarly</i></h3></div>
-    <div><a href="https://www.jasper.ai" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=jasper.ai&sz=128" alt=""></a><h3><i>Jasper</i></h3></div>
-    <div><a href="https://www.notion.com" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=notion.com&sz=128" alt=""></a><h3><i>Notion AI</i></h3></div>
-</article>
-<section><h2>MORE WRITING AI TOOLS</h2></section>
-<article class="r2">
-    <div><a href="https://quillbot.com" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=quillbot.com&sz=128" alt=""></a><h3><i>QuillBot</i></h3></div>
-    <div><a href="https://www.copy.ai" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=copy.ai&sz=128" alt=""></a><h3><i>Copy.ai</i></h3></div>
-    <div><a href="https://www.wordtune.com" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=wordtune.com&sz=128" alt=""></a><h3><i>Wordtune</i></h3></div>
-</article>
-    
+
+<header>
+<h1>AI <span>WRITING TOOLS</span></h1>
+<p>Write better. Express ideas. Create amazing content.</p>
+</header>
+
+<nav><ul>
+<li><a href="index.html">HOME</a></li>
+<li><a href="image.html">IMAGE</a></li>
+<li><a href="coding.html">CODING</a></li>
+<li><a href="study.html">STUDY</a></li>
+<li><a href="research.html">RESEARCH</a></li>
+<li><a href="video.html">VIDEO</a></li>
+<li><a href="automation.html">AUTOMATION</a></li>
+<li><a class="active" href="writing.html">WRITING</a></li>
+<li><a href="about.html">ABOUT</a></li>
+</ul></nav>
+
+<section>
+<h2>MOST POPULAR WRITING AI</h2>
+<div class="underline"></div>
+<p>Discover AI tools for writing, editing and creating content.</p>
+</section>
+
+<main class="tools">
+
+<div class="tool-card">
+<img src="https://www.google.com/s2/favicons?domain=grammarly.com&sz=256" alt="Grammarly">
+<h3>Grammarly</h3>
+<p>Improve grammar, spelling, tone and writing clarity.</p>
+<a class="visit" href="https://www.grammarly.com/" target="_blank">Explore AI</a>
+</div>
+
+<div class="tool-card">
+<img src="https://www.google.com/s2/favicons?domain=quillbot.com&sz=256" alt="QuillBot">
+<h3>QuillBot</h3>
+<p>Paraphrase, summarize and improve your written content.</p>
+<a class="visit" href="https://quillbot.com/" target="_blank">Explore AI</a>
+</div>
+
+<div class="tool-card">
+<img src="https://www.google.com/s2/favicons?domain=jasper.ai&sz=256" alt="Jasper">
+<h3>Jasper AI</h3>
+<p>Create marketing content and written material with AI.</p>
+<a class="visit" href="https://www.jasper.ai/" target="_blank">Explore AI</a>
+</div>
+
+<div class="tool-card">
+<img src="https://www.google.com/s2/favicons?domain=writesonic.com&sz=256" alt="Writesonic">
+<h3>Writesonic</h3>
+<p>Generate articles, marketing content and written ideas.</p>
+<a class="visit" href="https://writesonic.com/" target="_blank">Explore AI</a>
+</div>
+
+<div class="tool-card">
+<img src="https://www.google.com/s2/favicons?domain=copy.ai&sz=256" alt="Copy AI">
+<h3>Copy.ai</h3>
+<p>Create marketing copy and business content using AI.</p>
+<a class="visit" href="https://www.copy.ai/" target="_blank">Explore AI</a>
+</div>
+
+<div class="tool-card">
+<img src="https://www.google.com/s2/favicons?domain=wordtune.com&sz=256" alt="Wordtune">
+<h3>Wordtune</h3>
+<p>Rewrite sentences and make your writing clearer.</p>
+<a class="visit" href="https://www.wordtune.com/" target="_blank">Explore AI</a>
+</div>
+
+</main>
+
+<footer>
+<p>Made with creativity by <span>AIHUB</span></p>
+<p>Explore. Learn. Create. Innovate.</p>
+</footer>
 </body>
 </html>
