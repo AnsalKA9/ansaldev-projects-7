@@ -1,38 +1,343 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-    .r1{
-        display: block;
-        align-content: center;
-        text-align: center;
-    }
-    .r2{
-         display: flex;
-         justify-content: space-between;
-         text-align: center;
-         margin: 18px;
-         font-size: 40px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>AIHUB | Coding AI Tools</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0b1020;
+    color: white;
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    padding: 55px 20px 45px;
+    background: linear-gradient(135deg, #111a35, #172b4d, #243b68);
+}
+
+header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+header .brand {
+    color: #63e6d5;
+    text-shadow: 0 0 20px #63e6d577;
+}
+
+header p {
+    color: #bdc9df;
+    margin-top: 15px;
+    font-size: 1.05rem;
+}
+
+/* NAVIGATION */
+
+nav {
+    background: #10182b;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #293750;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 10px;
+    padding: 15px 10px;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: #dce6f5;
+    padding: 10px 17px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background: #63e6d5;
+    color: #0b1020;
+}
+
+/* SECTION */
+
+section {
+    text-align: center;
+    padding: 45px 20px 15px;
+}
+
+section h2 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+section p {
+    color: #9baac4;
+    margin-top: 12px;
+}
+
+.underline {
+    width: 75px;
+    height: 4px;
+    background: #63e6d5;
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+/* CODING TOOL GRID */
+
+.tools {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1150px;
+    margin: 30px auto 70px;
+    padding: 0 25px;
+}
+
+.tool-card {
+    background: #151f34;
+    border: 1px solid #293750;
+    border-radius: 18px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: 0.35s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-9px);
+    border-color: #63e6d5;
+    box-shadow: 0 12px 35px #00000066;
+}
+
+.tool-card img {
+    width: 125px;
+    height: 125px;
+    object-fit: contain;
+    padding: 15px;
+    background: #f4f6fa;
+    border-radius: 18px;
+    transition: 0.35s;
+}
+
+.tool-card:hover img {
+    transform: scale(1.08);
+}
+
+.tool-card h3 {
+    font-size: 1.4rem;
+    margin: 18px 0 10px;
+    color: #ffffff;
+}
+
+.tool-card p {
+    color: #9baac4;
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+    line-height: 1.5;
+    min-height: 55px;
+}
+
+.visit {
+    display: inline-block;
+    text-decoration: none;
+    background: #63e6d5;
+    color: #0b1020;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.visit:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    background: #10182b;
+    border-top: 1px solid #293750;
+    color: #9baac4;
+}
+
+footer span {
+    color: #63e6d5;
+    font-weight: bold;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 800px) {
+    .tools {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .tools {
+        grid-template-columns: 1fr;
+        padding: 0 18px;
+    }
+
+    nav ul {
+        gap: 3px;
+    }
+
+    nav a {
+        padding: 9px 11px;
+        font-size: 0.85rem;
+    }
+
+    header {
+        padding: 40px 15px;
+    }
+}
 </style>
 </head>
+
 <body>
-    <section><h2>MOST POPULAR CODING AI</h2></section>
-<article class="r1">
-    <div><a href="https://cursor.com" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=cursor.com&sz=128" alt=""></a><h3><i>Cursor</i></h3></div>
-    <div><a href="https://github.com/features/copilot" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=github.com&sz=128" alt=""></a><h3><i>GitHub Copilot</i></h3></div>
-    <div><a href="https://claude.com/product/claude-code" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=claude.com&sz=128" alt=""></a><h3><i>Claude Code</i></h3></div>
-</article>
-<section><h2>MORE CODING AI TOOLS</h2></section>
-<article class="r2">
-    <div><a href="https://windsurf.com" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=windsurf.com&sz=128" alt=""></a><h3><i>Windsurf</i></h3></div>
-    <div><a href="https://replit.com" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=replit.com&sz=128" alt=""></a><h3><i>Replit</i></h3></div>
-    <div><a href="https://lovable.dev" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=lovable.dev&sz=128" alt=""></a><h3><i>Lovable</i></h3></div>
-</article>
-    
+
+<!-- HEADER -->
+
+<header>
+    <h1>DISCOVER THE FUTURE OF CODING</h1>
+    <h1 class="brand">AIHUB CODING</h1>
+    <p>Code smarter. Build faster. Create without limits.</p>
+</header>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="image.html">IMAGE</a></li>
+        <li><a class="active" href="coding.html">CODING</a></li>
+        <li><a href="study.html">STUDY</a></li>
+        <li><a href="research.html">RESEARCH</a></li>
+        <li><a href="video.html">VIDEO</a></li>
+        <li><a href="automation.html">AUTOMATION</a></li>
+        <li><a href="writing.html">WRITING</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+    </ul>
+</nav>
+
+<!-- POPULAR CODING AI -->
+
+<section>
+    <h2>MOST POPULAR CODING AI</h2>
+    <div class="underline"></div>
+    <p>Explore powerful AI tools that help you write code and build applications.</p>
+</section>
+
+<!-- CODING AI CARDS -->
+
+<main class="tools">
+
+    <!-- CURSOR -->
+
+    <div class="tool-card">
+        <a href="https://cursor.com/" target="_blank" rel="noopener noreferrer">
+            <img src="https://www.google.com/s2/favicons?domain=cursor.com&sz=256" alt="Cursor AI">
+        </a>
+        <h3><i>Cursor</i></h3>
+        <p>An AI-powered code editor that helps developers write, understand and improve code.</p>
+        <a class="visit" href="https://cursor.com/" target="_blank" rel="noopener noreferrer">Explore AI</a>
+    </div>
+
+    <!-- GITHUB COPILOT -->
+
+    <div class="tool-card">
+        <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">
+            <img src="https://www.google.com/s2/favicons?domain=github.com&sz=256" alt="GitHub Copilot">
+        </a>
+        <h3><i>GitHub Copilot</i></h3>
+        <p>An AI coding assistant that helps developers write code and understand programming.</p>
+        <a class="visit" href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">Explore AI</a>
+    </div>
+
+    <!-- REPLIT -->
+
+    <div class="tool-card">
+        <a href="https://replit.com/" target="_blank" rel="noopener noreferrer">
+            <img src="https://www.google.com/s2/favicons?domain=replit.com&sz=256" alt="Replit">
+        </a>
+        <h3><i>Replit</i></h3>
+        <p>Build, test and deploy applications using an online development environment.</p>
+        <a class="visit" href="https://replit.com/" target="_blank" rel="noopener noreferrer">Explore AI</a>
+    </div>
+
+    <!-- WINDSURF -->
+
+    <div class="tool-card">
+        <a href="https://windsurf.com/" target="_blank" rel="noopener noreferrer">
+            <img src="https://www.google.com/s2/favicons?domain=windsurf.com&sz=256" alt="Windsurf">
+        </a>
+        <h3><i>Windsurf</i></h3>
+        <p>An AI-powered development environment designed to make coding workflows easier.</p>
+        <a class="visit" href="https://windsurf.com/" target="_blank" rel="noopener noreferrer">Explore AI</a>
+    </div>
+
+    <!-- BOLT -->
+
+    <div class="tool-card">
+        <a href="https://bolt.new/" target="_blank" rel="noopener noreferrer">
+            <img src="https://www.google.com/s2/favicons?domain=bolt.new&sz=256" alt="Bolt">
+        </a>
+        <h3><i>Bolt</i></h3>
+        <p>Create and develop web applications using natural language prompts.</p>
+        <a class="visit" href="https://bolt.new/" target="_blank" rel="noopener noreferrer">Explore AI</a>
+    </div>
+
+    <!-- LOVABLE -->
+
+    <div class="tool-card">
+        <a href="https://lovable.dev/" target="_blank" rel="noopener noreferrer">
+            <img src="https://www.google.com/s2/favicons?domain=lovable.dev&sz=256" alt="Lovable">
+        </a>
+        <h3><i>Lovable</i></h3>
+        <p>Build websites and applications by describing your ideas in natural language.</p>
+        <a class="visit" href="https://lovable.dev/" target="_blank" rel="noopener noreferrer">Explore AI</a>
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+    <p>Made with creativity by <span>AIHUB</span></p>
+    <p>Explore. Learn. Create. Innovate.</p>
+</footer>
+
 </body>
 </html>
