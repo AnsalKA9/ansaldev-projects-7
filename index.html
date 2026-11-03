@@ -1,163 +1,366 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIHUB.Home</title>
+    <title>AIHUB | Discover AI Tools</title>
+
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0b1020;
+            color: white;
+        }
+
+        /* HEADER */
+
         header {
-            background-color: aquamarine;
-            display: flex;
-            justify-content: center;
             text-align: center;
-            padding: 10px 0;
+            padding: 55px 20px 45px;
+            background: linear-gradient(135deg, #111a35, #172b4d, #243b68);
         }
 
         header h1 {
-            margin: 0;
-            font-size: 2rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            letter-spacing: 2px;
+            font-weight: 800;
         }
 
         header h2 {
-            margin: 5px 0;
-            font-style: oblique;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            color: #9de9e1;
+            margin: 8px 0;
+            letter-spacing: 5px;
+        }
+
+        header .brand {
+            color: #63e6d5;
+            text-shadow: 0 0 20px #63e6d577;
+        }
+
+        header p {
+            color: #bdc9df;
+            margin-top: 15px;
+            font-size: 1.05rem;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #10182b;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #293750;
         }
 
         nav ul {
-            background-color: aqua;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
             list-style: none;
-            gap: 20px;
-            margin: 0;
-            padding: 10px 20px;
-            font-size: large;
+            gap: 10px;
+            padding: 15px 10px;
         }
 
         nav a {
+            display: block;
             text-decoration: none;
-            color: black;
-            font-weight: bold;
+            color: #dce6f5;
+            padding: 10px 17px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
+        nav a:hover {
+            background: #63e6d5;
+            color: #0b1020;
+            transform: translateY(-3px);
+        }
+
+        /* SECTION */
+
         section {
-            padding: 10px 20px;
+            text-align: center;
+            padding: 45px 20px 15px;
         }
 
         section h2 {
-            margin-bottom: 10px;
-            font-style: oblique;
+            font-size: 2rem;
+            letter-spacing: 1px;
         }
 
-        /* Responsive grid rows */
-        .r1, .r2, .r3 {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 20px;
+        section p {
+            color: #9baac4;
+            margin-top: 12px;
         }
 
-        .r1 > div, .r2 > div, .r3 > div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .underline {
+            width: 75px;
+            height: 4px;
+            background: #63e6d5;
+            margin: 15px auto;
+            border-radius: 10px;
+        }
+
+        /* AI TOOL GRID */
+
+        .tools {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+            max-width: 1150px;
+            margin: 30px auto 70px;
+            padding: 0 25px;
+        }
+
+        .tool-card {
+            background: #151f34;
+            border: 1px solid #293750;
+            border-radius: 18px;
+            padding: 25px 20px;
             text-align: center;
-            flex: 1 1 250px; /* Forces cards to shrink/grow and wrap dynamically */
-            max-width: 400px;
+            transition: 0.35s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .r1 img, .r2 img, .r3 img {
-            width: 100%;
-            height: 300px;
-            object-fit: contain; /* Keeps logo aspect ratios clean without squishing them */
+        .tool-card:hover {
+            transform: translateY(-9px);
+            border-color: #63e6d5;
+            box-shadow: 0 12px 35px #00000066;
+        }
+
+        .tool-card img {
+            width: 125px;
+            height: 125px;
+            object-fit: contain;
+            padding: 15px;
+            background: #f4f6fa;
+            border-radius: 18px;
+            transition: 0.35s;
+        }
+
+        .tool-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .tool-card h3 {
+            font-size: 1.4rem;
+            margin: 18px 0 10px;
+            color: #ffffff;
+        }
+
+        .tool-card p {
+            color: #9baac4;
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+
+        .visit {
+            display: inline-block;
+            text-decoration: none;
+            background: #63e6d5;
+            color: #0b1020;
+            padding: 10px 24px;
             border-radius: 8px;
-            background-color: #f9f9f9;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        h3 {
-            font-size: 1.5rem;
-            margin: 10px 0;
+        .visit:hover {
+            background: white;
+            transform: scale(1.05);
         }
-    </style>  
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            background: #10182b;
+            border-top: 1px solid #293750;
+            color: #9baac4;
+        }
+
+        footer span {
+            color: #63e6d5;
+            font-weight: bold;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 800px) {
+            .tools {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 520px) {
+            .tools {
+                grid-template-columns: 1fr;
+                padding: 0 18px;
+            }
+
+            nav ul {
+                gap: 3px;
+            }
+
+            nav a {
+                padding: 9px 11px;
+                font-size: 0.85rem;
+            }
+
+            header {
+                padding: 40px 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-<header>
-    <h1>AN AI TOOL EXIST FOR EVERY PROBLEM 
-        <div><h2>IN</h2></div>
-        <div><h1>AIHUB</h1></div>
-    </h1>
-</header>
 
-<nav>
-    <ul>
-        <li><a href="image.html">IMAGE</a></li>
-        <li><a href="coding.html">CODING</a></li>
-        <li><a href="study.html">STUDY</a></li>
-        <li><a href="research.html">RESEARCH</a></li>
-        <li><a href="video.html">VIDEO</a></li>
-        <li><a href="automation.html">AUTOMATION</a></li>
-        <li><a href="writing.html">WRITING</a></li> 
-     </ul>
-</nav>
+    <!-- HEADER -->
 
-<section>
-    <h2>MOST POPULAR AI RIGHT NOW</h2>
-</section>
+    <header>
+        <h1>AN AI TOOL EXISTS FOR EVERY PROBLEM</h1>
+        <h2>IN</h2>
+        <h1 class="brand">AIHUB</h1>
+        <p>Discover the future. Explore the possibilities of Artificial Intelligence.</p>
+    </header>
 
-<article class="r1">
-    <div>
-        <a href="https://claude.com/" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNgJvi2fc9oREqObTRcyJcbuSTmv-p-1Mpe0dYZ_9R0A&s=10" alt="Claude AI"></a>
-        <h3><i>claude</i></h3>
-    </div>
-    <div>
-        <a href="https://chatgpt.com" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtz9CtrogmXsW4r4Jid9tPl0d8MKd-LYsGzkhUEElCdA&s=10" alt="ChatGPT"></a>
-        <h3><i>ChatGPT</i></h3>
-    </div>
-    <div>
-        <a href="https://gemini.google.com" target="_blank"><img src="https://9to5google.com/wp-content/uploads/sites/4/2025/07/new-Gemini-icon-cover.jpg?quality=82&strip=all&resize=1200,628" alt="Gemini"></a>
-        <h3><i>Gemini</i></h3>
-    </div>
-</article>
+    <!-- NAVIGATION -->
 
-<article class="r2">
-    <div>
-        <a href="https://www.perplexity.ai" target="_blank"><img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128" alt="Perplexity"></a>
-        <h3><i>Perplexity</i></h3>
-    </div>
-    <div>
-        <a href="https://chat.deepseek.com" target="_blank"><img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=128" alt="Deepseek"></a>
-        <h3><i>Deepseek</i></h3>
-    </div>
-    <div>
-        <a href="https://copilot.microsoft.com" target="_blank"><img src="https://www.google.com/s2/favicons?domain=copilot.microsoft.com&sz=128" alt="Copilot"></a>
-        <h3><i>Copilot</i></h3>
-    </div>
-</article>
+    <nav>
+        <ul>
+            <li><a href="image.html">IMAGE</a></li>
+            <li><a href="coding.html">CODING</a></li>
+            <li><a href="study.html">STUDY</a></li>
+            <li><a href="research.html">RESEARCH</a></li>
+            <li><a href="video.html">VIDEO</a></li>
+            <li><a href="automation.html">AUTOMATION</a></li>
+            <li><a href="writing.html">WRITING</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+        </ul>
+    </nav>
 
-<article class="r3">
-    <div>
-        <a href="https://grok.com" target="_blank"><img src="https://www.google.com/s2/favicons?domain=grok.com&sz=128" alt="Grok"></a>
-        <h3><i>Grok</i></h3>
-    </div>
-    <div>
-        <a href="https://www.midjourney.com" target="_blank"><img src="https://www.google.com/s2/favicons?domain=midjourney.com&sz=128" alt="Midjourney"></a>
-        <h3><i>Midjourney</i></h3>
-    </div>
-    <div>
-        <a href="https://meta.ai" target="_blank"><img src="https://www.google.com/s2/favicons?domain=meta.ai&sz=128" alt="Meta AI"></a>
-        <h3><i>Meta AI</i></h3>
-    </div>
-</article>
-    
+    <!-- POPULAR AI TOOLS -->
+
+    <section>
+        <h2>MOST POPULAR AI RIGHT NOW</h2>
+        <div class="underline"></div>
+        <p>Explore powerful AI tools that are changing the world.</p>
+    </section>
+
+    <!-- AI CARDS -->
+
+    <main class="tools">
+
+        <div class="tool-card">
+            <a href="https://claude.com/" target="_blank">
+                <img src="https://www.google.com/s2/favicons?domain=claude.com&sz=256" alt="Claude AI">
+            </a>
+            <h3><i>Claude</i></h3>
+            <p>An intelligent AI assistant for writing, reasoning and problem solving.</p>
+            <a class="visit" href="https://claude.com/" target="_blank">Explore AI</a>
+        </div>
+
+        <div class="tool-card">
+            <a href="https://chatgpt.com/" target="_blank">
+                <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=256" alt="ChatGPT">
+            </a>
+            <h3><i>ChatGPT</i></h3>
+            <p>Your AI assistant for creativity, learning, coding and everyday tasks.</p>
+            <a class="visit" href="https://chatgpt.com/" target="_blank">Explore AI</a>
+        </div>
+
+        <div class="tool-card">
+            <a href="https://gemini.google.com/" target="_blank">
+                <img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=256" alt="Gemini">
+            </a>
+            <h3><i>Gemini</i></h3>
+            <p>Google's AI assistant for information, productivity and creativity.</p>
+            <a class="visit" href="https://gemini.google.com/" target="_blank">Explore AI</a>
+        </div>
+
+        <div class="tool-card">
+            <a href="https://www.perplexity.ai/" target="_blank">
+                <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=256" alt="Perplexity">
+            </a>
+            <h3><i>Perplexity</i></h3>
+            <p>An AI-powered search engine for research and discovering information.</p>
+            <a class="visit" href="https://www.perplexity.ai/" target="_blank">Explore AI</a>
+        </div>
+
+        <div class="tool-card">
+            <a href="https://chat.deepseek.com/" target="_blank">
+                <img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=256" alt="DeepSeek">
+            </a>
+            <h3><i>DeepSeek</i></h3>
+            <p>A powerful AI assistant for reasoning, mathematics and coding.</p>
+            <a class="visit" href="https://chat.deepseek.com/" target="_blank">Explore AI</a>
+        </div>
+
+        <div class="tool-card">
+            <a href="https://copilot.microsoft.com/" target="_blank">
+                <img src="https://www.google.com/s2/favicons?domain=copilot.microsoft.com&sz=256" alt="Copilot">
+            </a>
+            <h3><i>Copilot</i></h3>
+            <p>Microsoft's AI companion for productivity and creative work.</p>
+            <a class="visit" href="https://copilot.microsoft.com/" target="_blank">Explore AI</a>
+        </div>
+
+        <div class="tool-card">
+            <a href="https://grok.com/" target="_blank">
+                <img src="https://www.google.com/s2/favicons?domain=grok.com&sz=256" alt="Grok">
+            </a>
+            <h3><i>Grok</i></h3>
+            <p>An AI assistant for answering questions and exploring ideas.</p>
+            <a class="visit" href="https://grok.com/" target="_blank">Explore AI</a>
+        </div>
+
+        <div class="tool-card">
+            <a href="https://www.midjourney.com/" target="_blank">
+                <img src="https://www.google.com/s2/favicons?domain=midjourney.com&sz=256" alt="Midjourney">
+            </a>
+            <h3><i>Midjourney</i></h3>
+            <p>Discover AI-powered image generation and artistic creativity.</p>
+            <a class="visit" href="https://www.midjourney.com/" target="_blank">Explore AI</a>
+        </div>
+
+        <div class="tool-card">
+            <a href="https://meta.ai/" target="_blank">
+                <img src="https://www.google.com/s2/favicons?domain=meta.ai&sz=256" alt="Meta AI">
+            </a>
+            <h3><i>Meta AI</i></h3>
+            <p>An AI assistant for conversations, creativity and exploration.</p>
+            <a class="visit" href="https://meta.ai/" target="_blank">Explore AI</a>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p>Made with creativity by <span>AIHUB</span></p>
+        <p>Explore. Learn. Create. Innovate.</p>
+    </footer>
+
 </body>
 </html>
+```
