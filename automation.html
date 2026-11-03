@@ -1,38 +1,283 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-    .r1{
-        display: block;
-        align-content: center;
-        text-align: center;
-    }
-    .r2{
-         display: flex;
-         justify-content: space-between;
-         text-align: center;
-         margin: 18px;
-         font-size: 40px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIHUB | AI Automation Tools</title>
 
-</style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    nav {
+      background: #10182b;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #26334d;
+    }
+
+    .logo {
+      color: #63e6d5;
+      font-size: 26px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav ul a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav ul a:hover,
+    nav ul a.active {
+      color: #63e6d5;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 75px 20px 55px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #63e6d5;
+    }
+
+    .hero p {
+      color: #aab7cc;
+      max-width: 650px;
+      margin: auto;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px 7% 70px;
+    }
+
+    .section-title {
+      font-size: 25px;
+      margin-bottom: 25px;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .tool-card {
+      background: #151f34;
+      border: 1px solid #26334d;
+      border-radius: 16px;
+      padding: 25px;
+      transition: 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-7px);
+      border-color: #63e6d5;
+      box-shadow: 0 10px 30px #00000040;
+    }
+
+    .tool-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 13px;
+      margin-bottom: 18px;
+      background: #ffffff;
+      padding: 8px;
+      object-fit: contain;
+    }
+
+    .tool-card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .tool-card p {
+      color: #aab7cc;
+      font-size: 14px;
+      margin-bottom: 22px;
+      flex-grow: 1;
+    }
+
+    .tool-card a {
+      display: inline-block;
+      background: #63e6d5;
+      color: #0b1020;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .tool-card a:hover {
+      background: #ffffff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #8190a8;
+      border-top: 1px solid #26334d;
+      font-size: 14px;
+    }
+
+    @media (max-width: 850px) {
+      .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 550px) {
+      nav {
+        justify-content: center;
+      }
+
+      nav ul {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <section><h2>MOST POPULAR AUTOMATION AI</h2></section>
-<article class="r1">
-    <div><a href="https://zapier.com" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=zapier.com&sz=128" alt=""></a><h3><i>Zapier</i></h3></div>
-    <div><a href="https://n8n.io" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=n8n.io&sz=128" alt=""></a><h3><i>n8n</i></h3></div>
-    <div><a href="https://www.make.com" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=make.com&sz=128" alt=""></a><h3><i>Make</i></h3></div>
-</article>
-<section><h2>MORE AUTOMATION AI TOOLS</h2></section>
-<article class="r2">
-    <div><a href="https://www.lindy.ai" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=lindy.ai&sz=128" alt=""></a><h3><i>Lindy</i></h3></div>
-    <div><a href="https://www.gumloop.com" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=gumloop.com&sz=128" alt=""></a><h3><i>Gumloop</i></h3></div>
-    <div><a href="https://relevanceai.com" target="_blank"><img height="200px" src="https://www.google.com/s2/favicons?domain=relevanceai.com&sz=128" alt=""></a><h3><i>Relevance AI</i></h3></div>
-</article>
-    
+
+  <nav>
+    <a href="index.html" class="logo">AIHUB</a>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="image.html">Image</a></li>
+      <li><a href="coding.html">Coding</a></li>
+      <li><a href="study.html">Study</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="video.html">Video</a></li>
+      <li><a href="automation.html" class="active">Automation</a></li>
+      <li><a href="writing.html">Writing</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>AI <span>Automation</span> Tools</h1>
+    <p>
+      Discover AI tools that automate repetitive tasks, connect your
+      favourite apps, and help you get more done with less effort.
+    </p>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title">Explore Automation Tools</h2>
+
+    <div class="tools-grid">
+
+      <article class="tool-card">
+        <img class="tool-icon"
+          src="https://www.google.com/s2/favicons?domain=zapier.com&sz=128"
+          alt="Zapier logo">
+        <h3>Zapier</h3>
+        <p>Connect different apps and automate workflows without needing to write code.</p>
+        <a href="https://zapier.com/" target="_blank" rel="noopener noreferrer">Explore Tool ↗</a>
+      </article>
+
+      <article class="tool-card">
+        <img class="tool-icon"
+          src="https://www.google.com/s2/favicons?domain=n8n.io&sz=128"
+          alt="n8n logo">
+        <h3>n8n</h3>
+        <p>Create powerful automated workflows by connecting apps, services, and AI models.</p>
+        <a href="https://n8n.io/" target="_blank" rel="noopener noreferrer">Explore Tool ↗</a>
+      </article>
+
+      <article class="tool-card">
+        <img class="tool-icon"
+          src="https://www.google.com/s2/favicons?domain=make.com&sz=128"
+          alt="Make logo">
+        <h3>Make</h3>
+        <p>Build visual automations that connect apps and handle tasks across your workflow.</p>
+        <a href="https://www.make.com/" target="_blank" rel="noopener noreferrer">Explore Tool ↗</a>
+      </article>
+
+      <article class="tool-card">
+        <img class="tool-icon"
+          src="https://www.google.com/s2/favicons?domain=lindy.ai&sz=128"
+          alt="Lindy logo">
+        <h3>Lindy</h3>
+        <p>Create AI assistants that can help manage tasks, communication, and everyday workflows.</p>
+        <a href="https://www.lindy.ai/" target="_blank" rel="noopener noreferrer">Explore Tool ↗</a>
+      </article>
+
+      <article class="tool-card">
+        <img class="tool-icon"
+          src="https://www.google.com/s2/favicons?domain=gumloop.com&sz=128"
+          alt="Gumloop logo">
+        <h3>Gumloop</h3>
+        <p>Build AI-powered workflows visually and automate tasks using connected tools.</p>
+        <a href="https://www.gumloop.com/" target="_blank" rel="noopener noreferrer">Explore Tool ↗</a>
+      </article>
+
+      <article class="tool-card">
+        <img class="tool-icon"
+          src="https://www.google.com/s2/favicons?domain=relevanceai.com&sz=128"
+          alt="Relevance AI logo">
+        <h3>Relevance AI</h3>
+        <p>Build AI agents and automate multi-step business processes with AI-powered workflows.</p>
+        <a href="https://relevanceai.com/" target="_blank" rel="noopener noreferrer">Explore Tool ↗</a>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 AIHUB. Made with creativity by AIHUB.</p>
+  </footer>
+
 </body>
 </html>
