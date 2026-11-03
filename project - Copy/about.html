@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIHUB | About</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0b1020; color: white; }
+        header { text-align: center; padding: 45px 20px; background: linear-gradient(135deg, #111a35, #172b4d, #243b68); }
+        header h1 { color: #63e6d5; font-size: clamp(2rem, 5vw, 2.8rem); }
+        header p { color: #bdc9df; margin-top: 12px; line-height: 1.6; }
+        nav { background: #10182b; position: sticky; top: 0; z-index: 10; border-bottom: 1px solid #293750; }
+        nav ul { display: flex; justify-content: center; flex-wrap: wrap; list-style: none; gap: 5px; padding: 12px 10px; }
+        nav a { display: block; color: #dce6f5; text-decoration: none; padding: 10px 13px; border-radius: 8px; font-size: .9rem; font-weight: 650; transition: .25s; }
+        nav a:hover, nav a.current { background: #63e6d5; color: #0b1020; }
+        .content { max-width: 950px; margin: 55px auto; padding: 0 22px; }
+        .panel { background: #151f34; border: 1px solid #293750; border-radius: 18px; padding: 32px; margin-bottom: 25px; }
+        h2 { color: #63e6d5; margin-bottom: 15px; font-size: 1.7rem; }
+        p { color: #bdc9df; line-height: 1.8; }
+        .categories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; margin-top: 20px; }
+        .category { background: #10182b; border: 1px solid #293750; border-radius: 12px; padding: 18px; }
+        .category h3 { color: white; margin-bottom: 7px; }
+        .category a { color: #63e6d5; text-decoration: none; }
+        .category a:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 25px 15px; background: #10182b; border-top: 1px solid #293750; color: #9baac4; line-height: 1.8; }
+        footer span { color: #63e6d5; font-weight: bold; }
+        @media(max-width: 600px) { .categories { grid-template-columns: 1fr; } .panel { padding: 23px; } nav a { padding: 8px 9px; font-size: .82rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ABOUT AIHUB</h1>
+        <p>Your starting point for discovering useful Artificial Intelligence tools.</p>
+    </header>
+    <nav><ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="image.html">IMAGE</a></li>
+            <li><a href="coding.html">CODING</a></li>
+            <li><a href="study.html">STUDY</a></li>
+            <li><a href="research.html">RESEARCH</a></li>
+            <li><a href="video.html">VIDEO</a></li>
+            <li><a href="automation.html">AUTOMATION</a></li>
+            <li><a href="writing.html">WRITING</a></li>
+            <li><a class="current" href="about.html">ABOUT</a></li>
+    </ul></nav>
+    <main class="content">
+        <div class="panel">
+            <h2>What is AIHUB?</h2>
+            <p>AIHUB is a simple directory designed to help people discover AI platforms for different needs. Whether you want to create images, write code, study, research, make videos, automate tasks or improve your writing, AIHUB brings useful starting points together in one place.</p>
+        </div>
+        <div class="panel">
+            <h2>What can you explore?</h2>
+            <p>Choose a category below to browse a collection of AI tools. Select an Explore AI link to visit the tool's official website.</p>
+            <div class="categories">
+                <div class="category"><h3>Image AI</h3><p>Create artwork, graphics and images.</p><a href="image.html">Explore image tools →</a></div>
+                <div class="category"><h3>Coding AI</h3><p>Get help writing, understanding and building code.</p><a href="coding.html">Explore coding tools →</a></div>
+                <div class="category"><h3>Study AI</h3><p>Learn topics, revise and organize study material.</p><a href="study.html">Explore study tools →</a></div>
+                <div class="category"><h3>Research AI</h3><p>Discover papers, sources and research insights.</p><a href="research.html">Explore research tools →</a></div>
+                <div class="category"><h3>Video AI</h3><p>Create and edit video content.</p><a href="video.html">Explore video tools →</a></div>
+                <div class="category"><h3>Automation AI</h3><p>Connect apps and simplify repeated tasks.</p><a href="automation.html">Explore automation tools →</a></div>
+                <div class="category"><h3>Writing AI</h3><p>Draft, rewrite and improve written content.</p><a href="writing.html">Explore writing tools →</a></div>
+            </div>
+        </div>
+        <div class="panel">
+            <h2>Our goal</h2>
+            <p>Make discovering AI tools easier, clearer and more accessible. AIHUB is an independent directory; tools are listed for discovery and are not necessarily affiliated with or endorsed by AIHUB.</p>
+        </div>
+    </main>
+    <footer>
+        <p>Made with creativity by <span>AIHUB</span></p>
+        <p>Explore. Learn. Create. Innovate.</p>
+    </footer>
+</body>
+</html>
